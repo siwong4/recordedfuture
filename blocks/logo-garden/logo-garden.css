@@ -1,0 +1,190 @@
+main > .logo-garden-container {
+  border-radius: 0 0 var(--corner-md) 0;
+
+  h3 {
+    font-size: var(--title-font-size-l);
+  }
+}
+
+main > .logo-garden-container .logo-garden-wrapper {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+}
+
+.logo-garden {
+  display: flex;
+  position: relative;
+  max-width: 1436px;
+  overflow: hidden;
+  user-select: none;
+  white-space: nowrap;
+
+  --webkit-user-drag: none;
+}
+
+.logo-garden .slider {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-around;
+  animation: scroll linear infinite;
+  box-sizing: border-box;
+  padding: var(--space-13) 0;
+}
+
+.logo-garden-wrapper::before,
+.logo-garden-wrapper::after {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 13%;
+  height: 100%;
+  pointer-events: none;
+  content: '';
+}
+
+.logo-garden-wrapper::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255 255 255 / 0%), white);
+}
+
+.logo-garden-wrapper::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255 255 255 / 0%), white);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logo {
+  max-width: 230px;
+  max-height: 64px;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 230px;
+    height: 64px;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+@media (width <= 600px) {
+  main > .section.logo-garden-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-0);
+    margin: 0;
+    padding: var(--space-13) 0;
+
+    > div.default-content-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0 var(--space-9);
+      text-align: center;
+    }
+  }
+
+  .logo {
+    max-width: 160px;
+    max-height: 44px;
+
+    img {
+      width: 160px;
+      height: 44px;
+    }
+  }
+}
+
+@media (width >= 601px) and (width <= 900px) {
+  main > .logo-garden-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-0);
+    margin: 0;
+    padding: var(--space-13) 0;
+
+    h3 {
+      margin: 0;
+      padding: 0 var(--space-9);
+      text-align: center;
+    }
+  }
+
+  .logo {
+    max-width: 200px;
+    max-height: 55px;
+
+    img {
+      width: 200px;
+      height: 55px;
+    }
+  }
+}
+
+@media (width >= 901px) and (width <= 1200px) {
+  main > .section.logo-garden-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    margin: 0;
+    padding: var(--space-15) 0;
+
+    > div.default-content-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0 var(--space-9);
+      text-align: center;
+    }
+  }
+}
+
+@media (width >= 1201px) {
+  main > .section.logo-garden-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    margin: 0;
+    padding: var(--space-19) 0;
+
+    > div.default-content-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+
+      h3 {
+        margin: 0;
+        padding: 0 var(--space-13);
+        max-width: 960px;
+        text-align: center;
+      }
+    }
+  }
+}

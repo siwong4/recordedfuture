@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /drafts/stage/
+
+Sitemap: https://www.recordedfuture.com/sitemap-index.xml

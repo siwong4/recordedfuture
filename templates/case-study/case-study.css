@@ -1,0 +1,15 @@
+@import url('../blog/blog.css');
+
+.article.case-study {
+  @media (width <= 1024px) {
+    .aside {
+      display: flex;
+      border-bottom: 2px solid var(--background-color-blue-200);
+      padding-bottom: var(--space-13);
+    }
+
+    .article-content {
+      padding-top: var(--space-9);
+    }
+  }
+}

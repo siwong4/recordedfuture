@@ -1,0 +1,25 @@
+---
+config:
+  theme: redux
+  layout: dagre
+---
+flowchart TD
+    publish(["Publish"]):::start --> drafted{"Path starts with<br/>/drafts/*?"}:::decision
+    drafted -- Yes --> resourceDraft{"Is it a<br/>resource page?"}:::decision
+    drafted -- No  ---> resourceProd{"Is it a<br/>resource page?"}:::decision
+
+    resourceDraft -- Yes  --> stageRes([Push to<br/>stage_RF_RESOURCES]):::stage
+    resourceDraft -- No  --> stageSite([Push to<br/>stage_RF_SITE]):::stage
+
+    resourceProd -- Yes --> prodRes([Push to<br/>prod_RF_RESOURCES]):::prod
+    resourceProd -- No  --> prodSite([Update to<br/>prod_RF_SITE]):::prod
+
+    classDef start fill:#b2e0ff,stroke:#2899be,stroke-width:2px;
+    classDef decision fill:#fff4b3,stroke:#dab600,stroke-width:2px;
+    classDef stage fill:#dbffe7,stroke:#219150,stroke-width:2px;
+    classDef prod fill:#ffe2e2,stroke:#de4343,stroke-width:2px;
+
+    class publish start;
+    class drafted,resourceDraft,resourceProd decision;
+    class stageRes,stageSite stage;
+    class prodRes,prodSite prod;

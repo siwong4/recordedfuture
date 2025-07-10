@@ -1,0 +1,150 @@
+.get-in-touch-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: var(--space-13, 3.5rem);
+  max-width: 1400px;
+
+  @media (width < 900px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .section[data-section='get-in-touch-left-panel'] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-8, 2rem);
+
+    .default-content-wrapper {
+      width: 480px;
+      text-align: left;
+
+      @media (width <= 1440px) {
+        width: 400px;
+      }
+
+      @media (width <= 1200px) {
+        width: 320px;
+      }
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 24px;
+      font-size: var(--body-font-size-l);
+      line-height: var(--line-height-150);
+    }
+
+    @media (width < 900px) {
+      padding: 0;
+
+      .default-content-wrapper {
+        width: 100%;
+      }
+
+      p {
+        font-size: var(--body-font-size-m);
+        line-height: var(--line-height-140);
+      }
+    }
+  }
+
+  .section.hubspot-embed-container {
+    box-sizing: border-box;
+    width: 100%;
+
+    @media (width < 600px) {
+      padding-right: 0;
+    }
+  }
+}
+
+.section.contact-locations.columns-container {
+  border-radius: 102px 102px 0 0;
+  background: var(--background-color-blue-50, #edf4ff);
+
+  .default-content-wrapper {
+    padding: 42px 102px 0;
+    text-align: left;
+
+    @media (width < 900px) {
+      padding: 48px 16px 0;
+      text-align: center;
+    }
+  }
+
+  .columns-wrapper {
+    gap: 96px;
+    padding: 96px 102px 102px;
+
+    @media (width < 900px) {
+      gap: 56px;
+      padding: 56px 16px 0;
+
+      .columns.block {
+        padding: 0 16px;
+      }
+    }
+
+    .columns > div {
+      @media (width < 900px) {
+        display: flex;
+        gap: var(--space-13);
+      }
+    }
+
+    .columns > div > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+      gap: var(--space-6, 24px);
+    }
+
+    .columns > div:not(:first-child) {
+      margin-top: 96px;
+
+      @media (width < 900px) {
+        margin-top: var(--space-13);
+      }
+    }
+
+    h4 {
+      color: var(--text-color-blue-200, #0500ff);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--line-height-140);
+    }
+
+    p {
+      margin: 0;
+      font-size: var(--body-font-size-l);
+      line-height: var(--line-height-150);
+    }
+
+    .button-container {
+      font-size: var(--body-font-size-m);
+
+      a.button:any-link {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+        padding: 0;
+        color: var(--text-color-blue-200, #0500ff);
+
+        &:hover {
+          color: var(--text-color-blue-300);
+        }
+      }
+    }
+  }
+}

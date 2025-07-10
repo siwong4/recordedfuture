@@ -1,0 +1,395 @@
+/* stylelint-disable max-nesting-depth */
+.section.diagram-container {
+  position: relative;
+  border-radius: var(--space-18, 96px) var(--space-0) var(--space-0) var(--space-0);
+  background: var(--background-color-blue-50);
+
+  > .default-content-wrapper {
+    display: flex;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-13);
+    z-index: 1;
+    padding: var(--space-19) var(--space-19);
+    padding-bottom: var(--space-13);
+    text-align: center;
+
+    .heading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-5, 20px);
+      max-width: 1200px;
+      text-align: center;
+
+      > h1 {
+        letter-spacing: -1.8px;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px var(--space-2);
+
+      > .button-container {
+        margin: 0;
+
+        > strong a.button,
+        a.button.secondary {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .diagram-wrapper {
+    padding: 0;
+
+    .diagram {
+      display: flex;
+      padding: 0 var(--space-18, 96px) var(--space-19, 102px) var(--space-18, 96px);
+
+      .diagram-graphic {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+        padding-right: var(--space-19);
+        max-width: 488px;
+
+        > .graphic {
+          position: sticky;
+          width: 100%;
+
+          --indicator-angle: 216deg;
+          --indicator-offset: 43%;
+
+          .indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(var(--indicator-angle)) translateX(var(--indicator-offset))
+              rotate(calc(-1 * var(--indicator-angle)));
+            transform-origin: center;
+            transition: transform 0.7s ease;
+            width: 100%;
+            height: 20%;
+          }
+
+          &.position-1 {
+            --indicator-angle: 226deg;
+            --indicator-offset: 49%;
+          }
+
+          &.position-2 {
+            --indicator-angle: 323deg;
+            --indicator-offset: 42%;
+          }
+
+          &.position-3 {
+            --indicator-angle: 410deg;
+            --indicator-offset: 54%;
+          }
+
+          &.position-4 {
+            --indicator-angle: 489deg;
+            --indicator-offset: 54%;
+          }
+        }
+      }
+
+      .diagram-cards {
+        display: flex;
+        flex-direction: column;
+
+        .diagram-card {
+          display: flex;
+          flex: 1 0 0;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: var(--space-9);
+          padding: 175px 150px 0 0;
+          min-height: 50vh;
+
+          .card-icon {
+            max-width: 136px;
+            max-height: 165px;
+          }
+
+          .card-body {
+            h1 {
+              margin: 0;
+              color: var(--text-color-blue-200);
+              letter-spacing: -1.8px;
+              text-align: left;
+            }
+
+            p {
+              margin: 0;
+              padding-top: var(--space-9);
+              color: var(--text-color-grey-300);
+              font-size: var(--title-font-size-l);
+              line-height: var(--line-height-140);
+              letter-spacing: 0;
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      .pagination {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (width <= 600px) {
+  .section.diagram-container {
+    > .default-content-wrapper {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-self: stretch;
+      gap: var(--space-9, 36px);
+      padding: var(--space-13) var(--space-9);
+
+      .heading-container {
+        align-items: flex-start;
+        align-self: stretch;
+        gap: var(--space-5, 20px);
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: var(--space-3);
+        padding: 0 var(--space-9, 36px);
+        width: 100%;
+
+        .button-container {
+          width: 100%;
+
+          > strong a.button,
+          a.button.secondary {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: stretch;
+            gap: var(--space-1, 4px);
+            margin: 0;
+            padding: var(--space-2, 8px) var(--space-4, 16px);
+          }
+        }
+      }
+    }
+
+    .diagram-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-self: stretch;
+      gap: 10px;
+      padding: 0 var(--space-4) var(--space-13);
+
+      .diagram {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        gap: var(--space-8);
+        margin-top: var(--space-4, 16px);
+        margin-bottom: var(--space-4, 16px);
+        border-radius: var(--corner-sm);
+        background: #fff;
+        padding: 0;
+        padding: var(--space-13, 56px) 36px;
+        overflow: hidden;
+
+        .diagram-graphic {
+          display: flex;
+          justify-content: center;
+          padding: 0;
+          max-width: 400px;
+
+          .graphic {
+            z-index: 0;
+            padding: 0;
+
+            --indicator-angle: 216deg;
+            --indicator-offset: 43%;
+
+            .indicator {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) rotate(var(--indicator-angle)) translateX(var(--indicator-offset))
+                rotate(calc(-1 * var(--indicator-angle)));
+              transform-origin: center;
+              transition: transform 0.7s ease;
+              width: 100%;
+              height: 16%;
+            }
+
+            &.position-1 {
+              --indicator-angle: 226deg;
+              --indicator-offset: 49%;
+
+              z-index: 0;
+            }
+
+            &.position-2 {
+              --indicator-angle: 315deg;
+              --indicator-offset: 49%;
+
+              z-index: 0;
+            }
+
+            &.position-3 {
+              --indicator-angle: 403deg;
+              --indicator-offset: 49%;
+
+              z-index: 0;
+            }
+
+            &.position-4 {
+              --indicator-angle: 496deg;
+              --indicator-offset: 49%;
+            }
+          }
+        }
+
+        .diagram-cards {
+          display: flex;
+          position: relative;
+          flex-direction: row;
+          width: 100%;
+          overflow: hidden;
+
+          .diagram-card {
+            display: none;
+            gap: var(--space-6, 16px);
+            padding: 0;
+            width: 310px;
+            min-height: 0;
+
+            &.active {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+            }
+
+            .card-body {
+              padding: 0 var(--space-6);
+              height: 100%;
+              letter-spacing: 0;
+              text-align: center;
+
+              h1 {
+                font-style: normal;
+                text-align: center;
+              }
+
+              p {
+                padding-top: var(--space-4);
+                font-weight: 400;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section.diagram-container .diagram-wrapper .diagram .pagination {
+    display: block;
+  }
+}
+
+@media (width >= 601px) {
+  .section.diagram-container {
+    .default-content-wrapper {
+      gap: var(--space-5);
+    }
+
+    & .diagram-wrapper {
+      & .diagram {
+        gap: var(--space-19);
+        padding: var(--space-14) var(--space-10) var(--space-18);
+
+        & .diagram-graphic {
+          padding: 0;
+          width: 50%;
+
+          > .graphic {
+            position: sticky;
+            top: 150px;
+            width: 100%;
+            max-width: none;
+
+            --indicator-angle: 216deg;
+            --indicator-offset: 43%;
+
+            .indicator {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) rotate(var(--indicator-angle)) translateX(var(--indicator-offset))
+                rotate(calc(-1 * var(--indicator-angle)));
+              transform-origin: center;
+              transition: transform 0.7s ease;
+              width: 100%;
+              height: 20%;
+            }
+
+            &.position-1 {
+              --indicator-angle: 226deg;
+              --indicator-offset: 49%;
+            }
+
+            &.position-2 {
+              --indicator-angle: 315deg;
+              --indicator-offset: 50%;
+            }
+
+            &.position-3 {
+              --indicator-angle: 404deg;
+              --indicator-offset: 49%;
+            }
+
+            &.position-4 {
+              --indicator-angle: 497deg;
+              --indicator-offset: 49%;
+            }
+          }
+        }
+
+        .diagram-cards {
+          width: 50%;
+
+          .diagram-card {
+            padding: 100px 0;
+            min-height: 30vh;
+
+            .card-body {
+              display: flex;
+              flex-direction: column;
+              gap: var(--space-3);
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

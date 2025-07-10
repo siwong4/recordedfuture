@@ -1,0 +1,6 @@
+  <svg class="background-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path
+      fill="#edf4ff"
+      d="M 0 0 c 86 0 23 0 271 -2 C 49 0 17 265 -1 364 L 0 75 Z"
+    ></path>
+  </svg>

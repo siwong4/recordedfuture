@@ -1,0 +1,141 @@
+main > .callout-container {
+  padding: 0;
+}
+
+main > .section > .callout-wrapper {
+  max-width: 100%;
+}
+
+.callout {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color-blue-200);
+  padding-top: 102px;
+  padding-bottom: 102px;
+}
+
+.callout .white-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  border-top-right-radius: 366px;
+  border-bottom-right-radius: 366px;
+  background-color: var(--primary-color-white);
+  aspect-ratio: 1/1;
+  width: calc(100% - 344px);
+  height: 366px;
+}
+
+.callout .white-container h2 {
+  justify-self: flex-end;
+  margin: 0;
+  padding: 96px;
+  max-width: 1200px;
+  color: var(--text-color-blue-400);
+}
+
+.callout .red-container {
+  position: relative;
+  right: 56px;
+  border-radius: 50%;
+  background-color: var(--primary-color-red-200);
+  aspect-ratio: 1/1;
+  min-width: 366px;
+  min-height: 366px;
+}
+
+.callout .red-container.in-view {
+  --translate: 100px;
+
+  animation-duration: 2s;
+  animation-name: parallax;
+}
+
+@media (width < 900px) {
+  .callout {
+    flex-direction: column-reverse;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .callout .white-container {
+    border-top-right-radius: 358px;
+    border-top-left-radius: 358px;
+    border-bottom-right-radius: 0;
+    width: 358px;
+    height: unset;
+  }
+
+  .callout .white-container h2 {
+    padding: 96px 36px 44px;
+    text-align: center;
+  }
+
+  .callout .red-container {
+    position: relative;
+    top: 56px;
+    right: 0;
+    border-radius: 50%;
+    min-width: 358px;
+    min-height: 358px;
+  }
+
+  .callout .red-container.in-view {
+    animation-name: top-to-bottom;
+  }
+
+  .callout .white-container.in-view {
+    animation-name: bottom-to-top;
+  }
+}
+
+@media (width < 600px) {
+  .callout {
+    padding: 0 var(--space-9) 0;
+  }
+
+  .callout .white-container {
+    width: 100%;
+  }
+
+  .callout .red-container {
+    top: 56px;
+    padding-top: 100%;
+    width: 100%;
+    min-width: unset;
+    height: 0;
+    min-height: unset;
+  }
+}
+
+@keyframes parallax {
+  from {
+    transform: translateY(var(--translate));
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes top-to-bottom {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 56px;
+  }
+}
+
+@keyframes bottom-to-top {
+  from {
+    bottom: -30px;
+  }
+
+  to {
+    bottom: 0;
+  }
+}

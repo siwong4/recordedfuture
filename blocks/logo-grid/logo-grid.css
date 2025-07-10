@@ -1,0 +1,202 @@
+/* stylelint-disable max-nesting-depth */
+main > .section.logo-grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > .section > div.logo-grid-wrapper {
+  display: flex;
+  align-items: center;
+  margin: var(--space-6) var(--space-4);
+  border-radius: 24px;
+  background-color: var(--primary-color-blue-200);
+  max-width: 430px;
+}
+
+.logo-grid {
+  --logo-size: 82px;
+  --logo-size-desktop: 96px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--background-color-blue-50);
+
+  .button-wrapper {
+    flex-direction: column;
+    width: 100%;
+
+    .button-container {
+      margin: 0;
+      padding: 0 var(--space-9) var(--space-13);
+      min-width: 120px;
+
+      a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        border: 1px solid var(--primary-color-white);
+        width: 100%;
+        font-size: var(--body-font-size-s);
+      }
+    }
+
+    .button-container:first-child a {
+      transition: background-color 0.3s ease;
+      background-color: var(--primary-color-blue-200);
+      color: var(--background-color-blue-50);
+    }
+
+    .button-container:last-child a {
+      transition:
+        background-color 0.3s ease,
+        opacity 0.3s ease;
+      background-color: var(--primary-color-white);
+      color: var(--primary-color-blue-200);
+    }
+
+    .button-container:first-child a:hover {
+      background-color: var(--background-color-blue-300);
+    }
+
+    .button-container:last-child a:hover {
+      border-color: var(--background-color-blue-150);
+      background-color: var(--background-color-blue-150);
+    }
+  }
+
+  .logo-grid-title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-13);
+    padding: var(--space-13) var(--space-8) 0;
+
+    & div {
+      text-align: center;
+    }
+
+    h3 {
+      margin: 0;
+      color: var(--primary-color-white);
+      font-size: var(--heading-font-size-s);
+    }
+
+    p {
+      font-size: var(--body-font-size-m);
+    }
+
+    .button-wrapper {
+      display: none;
+    }
+  }
+
+  .logo-grid-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-4);
+    padding: 0 var(--space-9);
+
+    .logo-item {
+      display: flex;
+      flex-wrap: wrap;
+
+      .logo-item-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: rgb(0 0 0 / 20%);
+        padding: var(--space-3);
+        width: var(--logo-size);
+        height: var(--logo-size);
+
+        & picture {
+          display: grid;
+          place-items: center;
+        }
+      }
+
+      .logo-item-text {
+        margin: auto 0;
+        padding-left: var(--space-8);
+        max-width: calc(100% - var(--logo-size) - var(--space-8));
+
+        h3 {
+          margin: 0;
+          color: var(--primary-color-white);
+          font-size: var(--title-font-size-l);
+        }
+
+        p {
+          font-size: var(--body-font-size-s);
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 1024px) {
+  main > .section > div.logo-grid-wrapper {
+    margin: var(--space-19);
+    padding: var(--space-8);
+    max-width: 1400px;
+  }
+
+  .logo-grid {
+    flex-direction: row;
+    align-items: flex-start;
+
+    & .button-wrapper {
+      display: none;
+
+      .button-container a {
+        font-size: var(--body-font-size-m);
+      }
+    }
+
+    .logo-grid-title {
+      flex: 1;
+      padding: var(--space-13) var(--space-8);
+
+      & div {
+        text-align: start;
+      }
+
+      h3 {
+        font-size: var(--heading-font-size-l);
+      }
+
+      p {
+        font-size: var(--title-font-size-l);
+      }
+
+      & .button-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-2);
+        margin: var(--space-13) 0 0;
+
+        p {
+          padding: 0;
+        }
+      }
+    }
+
+    .logo-grid-group {
+      flex: 1;
+      gap: var(--space-8);
+      padding: var(--space-13) var(--space-8);
+
+      .logo-item .logo-item-img {
+        padding: var(--space-2);
+        width: var(--logo-size-desktop);
+        height: var(--logo-size-desktop);
+      }
+    }
+  }
+}

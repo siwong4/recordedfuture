@@ -1,0 +1,9 @@
+.explore-demo {
+  .picture-wrapper {
+    background-image: url('/graphics/explore-background.svg');
+    background-position: top right;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+}

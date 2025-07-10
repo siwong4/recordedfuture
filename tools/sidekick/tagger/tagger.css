@@ -1,0 +1,141 @@
+body {
+  background-color: #faf8f6;
+  font-family: 'Trebuchet MS', Tahoma, Verdana, Arial, sans-serif;
+}
+
+main {
+  padding: 20px;
+  font-size: 1.2rem;
+  line-height: 1.2em;
+
+  .intro {
+    font-size: 1.2rem;
+  }
+
+  .filter {
+    display: inline-block;
+    position: relative;
+    padding: 20px 10px;
+    width: 95%;
+  }
+
+  #search-input {
+    border: none;
+    border-bottom: solid 1px grey;
+    padding: 5px;
+    width: 100%;
+    font-size: 1.3rem;
+    font-family: inherit;
+  }
+
+  #clear-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-bottom: 2px;
+    font-size: 1rem;
+  }
+}
+
+/* Tags container */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Individual tag styling */
+.tag {
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  padding: 5px 20px;
+  user-select: none;
+}
+
+/* Hover effect */
+.tag:hover {
+  background-color: #ddd;
+}
+
+/* Selected tag styling */
+.tag.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.tag.filtered {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (width <= 600px) {
+  .tag {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+#selected {
+  display: grid;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  gap: 1rem;
+  box-sizing: border-box;
+  background-color: #e7e2da;
+  padding: 30px;
+  width: 100%;
+
+  .tag {
+    font-size: 0.95rem;
+  }
+
+  button {
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 1em;
+    background-color: #f25749;
+    padding: 5px 20px;
+    color: white;
+    font-size: 13px;
+  }
+
+  button:disabled {
+    background-color: #ccc;
+    color: grey;
+  }
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 350px;
+}
+
+@media (width >= 600px) {
+  #selected {
+    grid-template-columns: 1fr 100px;
+  }
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  height: min-content;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.offscreen {
+  position: absolute;
+  top: -1000px;
+}

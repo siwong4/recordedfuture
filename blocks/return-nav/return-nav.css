@@ -1,0 +1,35 @@
+.return-nav {
+  margin: 0 auto;
+  padding-top: var(--space-13);
+  padding-bottom: var(--space-13);
+  max-width: 1440px;
+
+  @media (width > 1024px) {
+    padding-top: var(--space-19);
+  }
+
+  div {
+    padding-left: 0;
+
+    @media (width <= 1440px) {
+      padding-left: var(--space-14);
+    }
+
+    @media (width <= 1024px) {
+      padding-left: var(--space-9);
+    }
+
+    a {
+      color: var(--nav-bg-color);
+      font-weight: 300;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (width <= 600px) {
+  .return-nav {
+    padding-right: 0;
+  }
+}

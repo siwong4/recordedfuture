@@ -1,0 +1,139 @@
+version: 1
+indices:
+  site:
+    include:
+      - '/**'
+    exclude:
+      - '/drafts/**'
+      - '/tools/**'
+      - '/sidekick/**'
+      - '/fragments/**'
+      - '/data/**'
+      - '/graphics/**'
+      - '/nav'
+      - '/**/nav'
+      - '/footer'
+      - '/search'
+      - '/search'
+
+    target: /query-index.json
+    properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      altTitle:
+        select: head > meta[name="alt-title"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: match(attribute(el, "content"), "https:\/\/[^/]+(/.*)")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      category:
+        select: head > meta[name="category"]
+        value: attribute(el, "content")
+      resourceType:
+        select: head > meta[name="resource-type"]
+        value: attribute(el, "content")
+      author:
+        select: head > meta[name="author"]
+        value: attribute(el, "content")
+      productTags:
+        select: head > meta[name="product-tags"]
+        value: attribute(el, "content")
+      threatTags:
+        select: head > meta[name="threat-tags"]
+        value: attribute(el, "content")
+      topicTags:
+        select: head > meta[name="topic-tags"]
+        value: attribute(el, "content")
+      countryTags:
+        select: head > meta[name="country-tags"]
+        value: attribute(el, "content")
+      industryTags:
+        select: head > meta[name="industry-tags"]
+        value: attribute(el, "content")
+      publishedDate:
+        select: head > meta[name="published-date"]
+        value: attribute(el, "content")
+      sidebar:
+        select: head > meta[name="sidebar"]
+        value: attribute(el, "content")
+      resourceBlock:
+        select: head > meta[name="resource-block"]
+        value: attribute(el, "content")
+      resourceBlockTitle:
+        select: head > meta[name="resource-block-title"]
+        value: attribute(el, "content")
+  stage:
+    include:
+      - '/drafts/**'
+    exclude:
+      - '/tools/**'
+      - '/sidekick/**'
+      - '/fragments/**'
+      - '/data/**'
+      - '/graphics/**'
+      - '/nav'
+      - '/**/nav'
+      - '/footer'
+      - '/search'
+      - '/search'
+
+    target: /query-stage.json
+    properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      altTitle:
+        select: head > meta[name="alt-title"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: match(attribute(el, "content"), "https:\/\/[^/]+(/.*)")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      category:
+        select: head > meta[name="category"]
+        value: attribute(el, "content")
+      resourceType:
+        select: head > meta[name="resource-type"]
+        value: attribute(el, "content")
+      author:
+        select: head > meta[name="author"]
+        value: attribute(el, "content")
+      productTags:
+        select: head > meta[name="product-tags"]
+        value: attribute(el, "content")
+      threatTags:
+        select: head > meta[name="threat-tags"]
+        value: attribute(el, "content")
+      topicTags:
+        select: head > meta[name="topic-tags"]
+        value: attribute(el, "content")
+      countryTags:
+        select: head > meta[name="country-tags"]
+        value: attribute(el, "content")
+      industryTags:
+        select: head > meta[name="industry-tags"]
+        value: attribute(el, "content")
+      publishedDate:
+        select: head > meta[name="published-date"]
+        value: attribute(el, "content")
+      sidebar:
+        select: head > meta[name="sidebar"]
+        value: attribute(el, "content")
+      resourceBlock:
+        select: head > meta[name="resource-block"]
+        value: attribute(el, "content")
+      resourceBlockTitle:
+        select: head > meta[name="resource-block-title"]
+        value: attribute(el, "content")

@@ -1,0 +1,192 @@
+.section.roll-cards-container .roll-cards-background {
+  padding: var(--space-11) 0;
+
+  .roll-cards-wrapper {
+    width: 100%;
+  }
+}
+
+div.section.roll-cards-container .default-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-0, 0) var(--space-19, 102px);
+
+  > h1 {
+    letter-spacing: -1.8px;
+  }
+}
+
+.roll-cards {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: var(--space-11, 44px);
+  margin-top: var(--space-11);
+  margin-bottom: var(--space-11);
+  padding: var(--space-0, 0);
+
+  .pagination {
+    display: none;
+  }
+}
+
+.roll-cards > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: var(--space-11);
+  border-radius: var(--space-5);
+  padding: 0 var(--space-11);
+  overflow: visible;
+}
+
+.roll-cards > ul > li {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 150ms ease-in-out;
+  border-radius: 24px;
+  background: var(--primary-color-blue-200);
+  padding: var(--space-13) var(--space-9);
+  width: 324px;
+  height: 494px;
+  list-style: none;
+}
+
+.roll-cards > ul > li:hover {
+  transform: translate(0, -5px) scale(1);
+  box-shadow: 0 13px 7px rgba(0 0 0 0.05%);
+}
+
+.roll-cards > ul > li > a {
+  position: absolute;
+  inset: 0;
+  text-decoration: none;
+}
+
+.roll-cards > ul > li > a > div {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: var(--space-13) var(--space-9);
+  width: 100%;
+  height: 100%;
+}
+
+.roll-cards .cards-card-body {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: var(--space-1, 4px);
+  padding: 0 var(--space-2, 8px);
+  height: 75px;
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  p {
+    color: var(--primary-color-white, #fff);
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--title-font-size-l);
+    line-height: 120%;
+    letter-spacing: 0;
+    text-align: center;
+  }
+}
+
+.roll-cards .cards-card-image {
+  display: flex;
+  flex: 1 0 0;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: 10px;
+}
+
+.roll-cards > ul > li img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (width <= 600px) {
+  div.section.roll-cards-container .default-content-wrapper {
+    padding: 0;
+  }
+
+  .roll-cards {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    .pagination {
+      display: block;
+    }
+  }
+
+  .roll-cards > ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-4, 16px);
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    touch-action: pan-y;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .roll-cards > ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .roll-cards > ul > li {
+    flex: 0 0 270px;
+    padding: var(--space-9, 36px) var(--space-11, 44px);
+    scroll-snap-align: center;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+@media (width >= 601px) and (width <= 1024px) {
+  .roll-cards {
+    display: block;
+
+    ul {
+      gap: var(--space-1);
+      padding: 0 var(--space-4);
+
+      .roll-card {
+        padding: 0;
+        width: 270px;
+        height: 428px;
+
+        picture {
+          max-width: 70%;
+        }
+
+        .cards-card-body {
+          padding-bottom: var(--space-9);
+        }
+      }
+
+      > li > a > div {
+        padding: 0;
+      }
+    }
+  }
+}

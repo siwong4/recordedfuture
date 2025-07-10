@@ -1,0 +1,123 @@
+.threats-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+  width: 100%;
+  text-align: left;
+}
+
+.threats-card .threats-card-title {
+  margin: var(--space-11) 0;
+}
+
+.threats-card .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.threats-card .threats-card-items-wrapper {
+  align-self: normal;
+  border-top: 4px solid var(--primary-color-blue-200);
+  border-radius: var(--corner-sm);
+  background-color: var(--primary-color-white);
+  padding: 32px;
+  text-align: left;
+}
+
+.threats-card .threats-card-items-wrapper .threat-card-item .threat-card-item-image {
+  display: flex;
+  align-items: center;
+  border-radius: var(--corner-sm);
+  width: 100%;
+  height: 341px;
+  overflow: hidden;
+}
+
+.threats-card .threats-card-items-wrapper .threat-card-item .threat-card-item-image img {
+  width: 100%;
+  height: 341px;
+  object-fit: cover;
+}
+
+.threats-card .threats-card-items-wrapper .threat-card-item .threat-card-item-date {
+  margin: 32px 0 36px;
+  color: var(--secondary-color-blue-400);
+  font-size: var(--eyebrow-font-size-s);
+}
+
+.threats-card .threat-card-view-all-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  gap: 8px;
+  margin-top: 36px;
+  white-space: nowrap;
+}
+
+.threats-card .threat-card-view-all-button svg {
+  fill: var(--primary-color-blue-200);
+  width: 17px;
+  height: 27px;
+}
+
+.threats-card .threats-card-items-wrapper .threat-card-item .threat-card-item-title {
+  font-size: var(--heading-font-size-s);
+}
+
+.threats-card .threats-card-items-wrapper .threat-card-item .threat-card-item-description {
+  margin-top: 24px;
+  font-size: var(--body-font-size-l);
+}
+
+.threats-card .threats-card-items-wrapper .threat-card-item .threat-card-item-content-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-color-blue-200);
+  font-size: var(--body-font-size-m);
+}
+
+.threats-card .threats-card-items-wrapper .threat-card-item .threat-card-item-content-tag .divider {
+  background-color: var(--text-color-grey-300);
+  width: 1px;
+  height: 16px;
+}
+
+@media (width <= 900px) {
+  .threats-card {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      'first-title'
+      'first-card-item'
+      'first-button'
+      'second-title'
+      'second-card-item'
+      'second-button';
+    text-align: center;
+  }
+
+  .threats-card .threats-card-title:first-child {
+    grid-area: first-title;
+  }
+
+  .threats-card .threats-card-title:nth-child(2) {
+    grid-area: second-title;
+  }
+
+  .threats-card .threats-card-items-wrapper:nth-child(3) {
+    grid-area: first-card-item;
+  }
+
+  .threats-card .threats-card-items-wrapper:nth-child(4) {
+    grid-area: second-card-item;
+  }
+
+  .threats-card .threat-card-view-all-button:nth-child(5) {
+    grid-area: first-button;
+  }
+
+  .threats-card .threat-card-view-all-button:nth-child(6) {
+    grid-area: second-button;
+  }
+}
